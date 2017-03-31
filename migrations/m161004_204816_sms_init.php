@@ -6,8 +6,6 @@
  * @version   1.0.0
  */
 
-namespace lowbase\sms\migrations;
-
 use yii\db\Migration;
 
 /**
