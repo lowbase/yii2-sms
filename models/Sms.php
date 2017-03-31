@@ -61,7 +61,7 @@ class Sms extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'lb_sms';
+        return '{{%sms}}';
     }
 
     /**
