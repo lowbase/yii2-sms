@@ -30,7 +30,7 @@ class m161004_204816_sms_init extends Migration
         }
 
         // Create sms table
-        $this->createTable('lb_sms', [
+        $this->createTable('{{%sms}}', [
             'id' => $this->primaryKey(),
             'provider_sms_id' => $this->string(),
             'phone' => $this->string(20)->notNull(),
@@ -47,10 +47,10 @@ class m161004_204816_sms_init extends Migration
         ], $tableOptions);
 
         // Create indexes
-        $this->createIndex('lb_sms-status-idx', 'lb_sms', 'status');
-        $this->createIndex('lb_provider_sms_id-idx', 'lb_sms', 'provider_sms_id');
-        $this->createIndex('lb_sms-for_user_id-idx', 'lb_sms', 'for_user_id');
-        $this->createIndex('lb_sms-phone-idx', 'lb_sms', 'phone');
+        $this->createIndex('lb_sms-status-idx', '{{%sms}}', 'status');
+        $this->createIndex('lb_provider_sms_id-idx', '{{%sms}}', 'provider_sms_id');
+        $this->createIndex('lb_sms-for_user_id-idx', '{{%sms}}', 'for_user_id');
+        $this->createIndex('lb_sms-phone-idx', '{{%sms}}', 'phone');
     }
 
     /**
@@ -59,6 +59,6 @@ class m161004_204816_sms_init extends Migration
     public function safeDown()
     {
         // Drop sms table
-        $this->dropTable('lb_sms');
+        $this->dropTable('{{%sms}}');
     }
 }
